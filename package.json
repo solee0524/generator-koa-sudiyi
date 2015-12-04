@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-sudiyi",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "A yo generator with koa.js from sudiyi.",
   "homepage": "https://github.com/solee0524/generator-koa-sudiyi#readme",
   "author": {
@@ -24,11 +24,8 @@
     "chalk": "^1.0.0",
     "yosay": "^1.0.2",
     "deep-extend": "^0.4.0",
-    "generator-node": "^1.7.0",
-    "inquirer-npm-name": "^1.0.0",
     "lodash": "^3.6.0",
-    "mkdirp": "^0.5.1",
-    "superb": "^1.0.0"
+    "mkdirp": "^0.5.1"
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",

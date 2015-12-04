@@ -49,7 +49,7 @@ module.exports = yeoman.generators.Base.extend({
       {
         type: 'list',
         name: 'projectLicense',
-        massage: 'Please choose license:',
+        message: 'Please choose license:',
         choices: ['MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0']
       }
     ];
