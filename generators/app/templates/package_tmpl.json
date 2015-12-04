@@ -1,0 +1,20 @@
+{
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "",
+  "license": ""
+}
