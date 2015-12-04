@@ -66,4 +66,4 @@ Will keep eyes on module update.
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
 
 ## License
-MIT © Bo Li <iblee0524@gmail.com>
+MIT © Bo Li (<iblee0524@gmail.com>)
