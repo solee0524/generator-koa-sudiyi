@@ -57,7 +57,6 @@ module.exports = yeoman.generators.Base.extend({
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
-
       done();
     }.bind(this));
 
@@ -65,13 +64,16 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   defaults: function () {
-    if (path.basename(this.destinationPath()) !== this.props.name) {
+
+    console.log(this.props);
+
+    if (path.basename(this.destinationPath()) !== this.props.projectName) {
       this.log(
-        'Your generator must be inside a folder named ' + this.props.name + '\n' +
+        'Your generator must be inside a folder named ' + this.props.projectName + '\n' +
         'I\'ll automatically create this folder.'
       );
-      mkdirp(this.props.name);
-      this.destinationRoot(this.destinationPath(this.props.name));
+      mkdirp(this.props.projectName);
+      this.destinationRoot(this.destinationPath(this.props.projectName));
     }
 
   },
@@ -80,8 +82,8 @@ module.exports = yeoman.generators.Base.extend({
 
     var readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
     this.fs.write(this.destinationPath, readmeTpl({
-      generatorName: this.props.name,
-      yoName: this.props.name.replace('generator-', '')
+      generatorName: 'generator-koa-sudiyi'
+      yoName: 'koa-sudiyi'
     }));
 
 
