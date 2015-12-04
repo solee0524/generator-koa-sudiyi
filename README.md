@@ -3,17 +3,17 @@ A yo generator with koa.js from sudiyi.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and <%- generatorName %> using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and **generator-koa-sudiyi** using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g <%- generatorName %>
+npm install -g generator-koa-sudiyi
 ```
 
 Then generate your new project:
 
 ```bash
-yo <%- yoName %>
+yo koa-sudiyi
 ```
 
 ## Getting To Know Yeoman

@@ -16,6 +16,32 @@ Then generate your new project:
 yo <%- yoName %>
 ```
 
-## Getting To Know Yeoman
+## What do you get?
 
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
+Scaffolds out a complete generator directory structure for you:
+
+```
+.
+├──lib/
+│   ├── controllers/
+│   ├── middlewares/
+│   │   └── common/
+│   │       └── request_id.js
+│   ├── models/
+│   ├── db/
+│   ├── logger/
+│   ├── routes/
+│   ├── utils/
+│   └── index.js
+│
+├── public/
+├── app.js
+├── .gitignore
+├── .jshintrc
+├── package.json
+└── README.md
+```
+
+## Getting To Know Sudiyi
+
+[Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.
