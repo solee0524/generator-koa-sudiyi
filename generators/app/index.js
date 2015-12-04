@@ -82,7 +82,7 @@ module.exports = yeoman.generators.Base.extend({
 
     var readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
     this.fs.write(this.destinationPath, readmeTpl({
-      generatorName: 'generator-koa-sudiyi'
+      generatorName: 'generator-koa-sudiyi',
       yoName: 'koa-sudiyi'
     }));
 
