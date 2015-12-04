@@ -42,6 +42,22 @@ Scaffolds out a complete generator directory structure for you:
 └── README.md
 ```
 
+## Run the demo
+
+After the installation, we could run script to start server (http://localhost:3333).
+
+```
+npm start
+```
+
+## Versions
+
+### 1.0.0
+
+The formal version of this generator. Works properly.
+
+Will keep eyes on module update.
+
 ## Getting To Know Sudiyi
 
 [Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.

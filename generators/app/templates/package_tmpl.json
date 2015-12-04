@@ -10,6 +10,7 @@
 
   },
   "scripts": {
+    "start": "node lib/index.js",
     "test": "mocha"
   },
   "keywords": [

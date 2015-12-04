@@ -16,7 +16,7 @@ var cors = require('kcors');
 var path = require('path');
 
 //middleware
-var requestId = require('./middleware/common/request_id.js');
+var requestId = require('./middlewares/common/request_id.js');
 
 
 // Serve static files

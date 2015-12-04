@@ -65,8 +65,6 @@ module.exports = yeoman.generators.Base.extend({
 
   defaults: function () {
 
-    console.log(this.props);
-
     if (path.basename(this.destinationPath()) !== this.props.projectName) {
       this.log(
         'Your generator must be inside a folder named ' + this.props.projectName + '\n' +
@@ -81,11 +79,10 @@ module.exports = yeoman.generators.Base.extend({
   writing: function () {
 
     var readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
-    this.fs.write(this.destinationPath, readmeTpl({
+    this.fs.write(this.destinationPath('README.md'), readmeTpl({
       generatorName: 'generator-koa-sudiyi',
       yoName: 'koa-sudiyi'
     }));
-
 
     var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'), {});
     extend(pkg, {
@@ -148,20 +145,17 @@ module.exports = yeoman.generators.Base.extend({
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
 
 
-    this.mkdir('lib/controllers');
-    this.mkdir('lib/middlewares');
-    this.mkdir('lib/middlewares/common');
-    this.mkdir('lib/models');
-    this.mkdir('lib/db');
-    this.mkdir('lib/logger');
-    this.mkdir('lib/routes');
-    this.mkdir('lib/utils');
-    this.mkdir('public');
+    mkdirp('lib/controllers');
+    mkdirp('lib/middlewares');
+    mkdirp('lib/middlewares/common');
+    mkdirp('lib/models');
+    mkdirp('lib/db');
+    mkdirp('lib/logger');
+    mkdirp('lib/routes');
+    mkdirp('lib/utils');
+    mkdirp('public');
 
-    this.fs.copy(
-      this.templatePath('dummyfile.txt'),
-      this.destinationPath('dummyfile.txt')
-    );
+
     this.fs.copy(
       this.templatePath('gitignore_tmpl'),
       this.destinationPath('.gitignore')
@@ -187,7 +181,7 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   install: function () {
-    this.installDependencies();
+    this.installDependencies({bower: false});
   }
 })
 ;
