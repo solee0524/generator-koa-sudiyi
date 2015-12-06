@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-sudiyi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A yo generator with koa.js from sudiyi.",
   "homepage": "https://github.com/solee0524/generator-koa-sudiyi#readme",
   "author": {
@@ -37,7 +37,7 @@
     "gulp-plumber": "^1.0.0",
     "gulp-nsp": "^2.1.0"
   },
-  "repository": "https://github.com/solee0524/generator-koa-sudiyi.git",
+  "repository": "solee0524/generator-koa-sudiyi",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
