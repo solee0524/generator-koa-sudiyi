@@ -112,7 +112,7 @@ module.exports = yeoman.generators.Base.extend({
         'node-uuid': '^1.4.7',
         'nodemailer': '^1.10.0',
         'redis': '^2.4.2',
-        'sequelize': '^3.14.2',
+        'sequelize': '^3.13.0',
         'sequelize-cli': '^2.2.1',
         'socket.io': '^1.3.7',
         'swig': '^1.4.2',
@@ -183,5 +183,4 @@ module.exports = yeoman.generators.Base.extend({
   install: function () {
     this.installDependencies({bower: false});
   }
-})
-;
+});

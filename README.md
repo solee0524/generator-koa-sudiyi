@@ -57,6 +57,10 @@ The formal version of this generator. Works properly.
 
 Will keep eyes on module update.
 
+### 1.0.2
+
+Tiny modify to Sequlize version to 3.13.0 (Because 3.14.3 will cause promise warning).
+
 ## Getting To Know Sudiyi
 
 [Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.
