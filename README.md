@@ -61,6 +61,12 @@ Will keep eyes on module update.
 
 Tiny modify to Sequlize version to 3.13.0 (Because 3.14.3 will cause promise warning).
 
+### 1.0.3
+
+Modify index.js for further mocha test(next version will add a sample).
+
+Remove the useless modules and add `co-mocha`, `co-supertest` to package.json
+
 ## Getting To Know Sudiyi
 
 [Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.
@@ -70,4 +76,4 @@ Tiny modify to Sequlize version to 3.13.0 (Because 3.14.3 will cause promise war
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
 
 ## License
-MIT © Bo Li (<iblee0524@gmail.com>)
+MIT © Bo Li ([solee.me](http://solee.me))

@@ -3,19 +3,18 @@ A yo generator with koa.js from sudiyi.
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and <%- generatorName %> using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and **generator-koa-sudiyi** using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
-npm install -g <%- generatorName %>
+npm install -g generator-koa-sudiyi
 ```
 
 Then generate your new project:
 
 ```bash
-yo <%- yoName %>
+yo koa-sudiyi
 ```
-
 ## What do you get?
 
 Scaffolds out a complete generator directory structure for you:
@@ -46,7 +45,7 @@ Scaffolds out a complete generator directory structure for you:
 
 After the installation, we could run script to start server (http://localhost:3333).
 
-```
+```bash
 npm start
 ```
 
@@ -58,6 +57,23 @@ The formal version of this generator. Works properly.
 
 Will keep eyes on module update.
 
+### 1.0.2
+
+Tiny modify to Sequlize version to 3.13.0 (Because 3.14.3 will cause promise warning).
+
+### 1.0.3
+
+Modify index.js for further mocha test(next version will add a sample).
+
+Remove the useless modules and add `co-mocha`, `co-supertest` to package.json
+
 ## Getting To Know Sudiyi
 
 [Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.
+
+## Getting To Know Yeoman
+
+Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced. Feel free to [learn more about him](http://yeoman.io/).
+
+## License
+MIT © Bo Li ([solee.me](http://solee.me))

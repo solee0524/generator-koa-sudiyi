@@ -125,12 +125,12 @@ module.exports = yeoman.generators.Base.extend({
         'request': '^2.67.0'
       },
       devDependencies: {
-        'mocha': '^2.3.3',
-        'chai': '^3.4.1',
-        'gulp': '^3.9.0',
-        'faker': '^3.0.1',
-        'minimist': '^1.2.0',
-        'co-mocha': '^1.1.2'
+        "chai": "^3.4.1",
+        "co-mocha": "^1.1.2",
+        "co-supertest": "0.0.10",
+        "gulp": "^3.9.0",
+        "mocha": "^2.3.3",
+        "supertest": "^1.1.0"
       }
     });
     pkg.keywords = pkg.keywords || [];

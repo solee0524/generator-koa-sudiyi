@@ -5,7 +5,7 @@
 'use strict';
 
 var koa = require('koa');
-var app = module.exports = koa();
+var app = koa();
 var http = require('http');
 var compress = require('koa-compress');
 var serve = require('koa-static');
@@ -28,22 +28,20 @@ app.use(requestId());
 //Please handle error here
 //app.use(errorHandler());
 
-
 app.use(bodyParser());
-
-
-
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-router.get('/*',function *(next){
+router.get('/hello',function *(next){
   yield next;
   this.body = 'Hello, this is Sudiyi generator';
 });
 
 
-
 if (!module.parent) {
-  http.createServer(app.callback()).listen(3333);
-  console.log('listening on port 3333');
+  //http.createServer(app.callback()).listen(process.env.PORT || 3333);
+  app.listen(process.env.PORT || 3333);
+  logger.info('listening on port %s', process.env.PORT || 3333);
 }
+
+module.exports = app;
