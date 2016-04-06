@@ -5,7 +5,7 @@
 'use strict';
 
 var log4js = require('log4js');
-var logger = log4js.getLogger('northshire');
+var logger = log4js.getLogger('<%- project_name %>');
 
 logger.setLevel(process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'testing'
                                       ? 'TRACE'

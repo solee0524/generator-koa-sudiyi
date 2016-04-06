@@ -5,7 +5,7 @@
 'use strict';
 
 var moment = require('moment');
-var logger = require('../logger');
+var logger = require('../../logger');
 
 module.exports = function *(next) {
   var nodeReq = this.req;

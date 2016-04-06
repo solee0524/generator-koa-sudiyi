@@ -78,10 +78,10 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
 
-    var readmeTpl = _.template(this.fs.read(this.templatePath('README.md')));
-    this.fs.write(this.destinationPath('README.md'), readmeTpl({
-      generatorName: 'generator-koa-sudiyi',
-      yoName: 'koa-sudiyi'
+    var readmeTmpl = _.template(this.fs.read(this.templatePath('README.md')));
+    this.fs.write(this.destinationPath('README.md'), readmeTmpl({
+      project_name: this.props.projectName,
+      project_license: this.props.projectLicense
     }));
 
     var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'), {});
@@ -177,10 +177,15 @@ module.exports = yeoman.generators.Base.extend({
     );
 
     //copy logger file
-    this.fs.copy(
-      this.templatePath('logger-index_tmpl.js'),
-      'lib/logger/index.js'
-    );
+    //this.fs.copy(
+    //  this.templatePath('logger-index_tmpl.js'),
+    //  'lib/logger/index.js'
+    //);
+    var loggerIndexTmpl = _.template(this.fs.read(this.templatePath('logger-index_tmpl.js')));
+    this.fs.write(this.destinationPath('lib/logger/index.js'), loggerIndexTmpl({
+      project_name: this.props.projectName
+    }));
+
 
     //copy routes file
     this.fs.copy(
