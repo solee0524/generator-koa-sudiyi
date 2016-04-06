@@ -1,6 +1,38 @@
 # generator-koa-sudiyi
 A yo generator with koa.js from sudiyi.
 
+<p align="left">
+  <a href="https://npmjs.org/package/generator-koa-sudiyi">
+    <img src="https://img.shields.io/npm/v/generator-koa-sudiyi.svg?style=flat-square"
+         alt="NPM Version">
+  </a>
+
+  <a href="https://coveralls.io/r/solee0524/generator-koa-sudiyi">
+    <img src="https://img.shields.io/coveralls/solee0524/generator-koa-sudiyi.svg?style=flat-square"
+         alt="Coverage Status">
+  </a>
+
+  <a href="https://travis-ci.org/solee0524/generator-koa-sudiyi">
+    <img src="https://img.shields.io/travis/solee0524/generator-koa-sudiyi.svg?style=flat-square"
+         alt="Build Status">
+  </a>
+
+  <a href="https://npmjs.org/package/generator-koa-sudiyi">
+    <img src="http://img.shields.io/npm/dm/generator-koa-sudiyi.svg?style=flat-square"
+         alt="Downloads">
+  </a>
+
+  <a href="https://david-dm.org/solee0524/generator-koa-sudiyi.svg">
+    <img src="https://david-dm.org/solee0524/generator-koa-sudiyi.svg?style=flat-square"
+         alt="Dependency Status">
+  </a>
+
+  <a href="https://github.com/solee0524/generator-koa-sudiyi/blob/master/LICENSE">
+    <img src="https://img.shields.io/npm/l/generator-koa-sudiyi.svg?style=flat-square"
+         alt="License">
+  </a>
+</p>
+
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and **generator-koa-sudiyi** using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
