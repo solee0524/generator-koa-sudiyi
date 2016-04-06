@@ -81,7 +81,8 @@ module.exports = yeoman.generators.Base.extend({
     var readmeTmpl = _.template(this.fs.read(this.templatePath('README.md')));
     this.fs.write(this.destinationPath('README.md'), readmeTmpl({
       project_name: this.props.projectName,
-      project_license: this.props.projectLicense
+      project_license: this.props.projectLicense,
+      project_author: this.props.projectAuthor
     }));
 
     var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'), {});
@@ -116,7 +117,6 @@ module.exports = yeoman.generators.Base.extend({
         "chai": "^3.4.1",
         "co-mocha": "^1.1.2",
         "co-supertest": "0.0.10",
-        "gulp": "^3.9.0",
         "mocha": "^2.3.3",
         "supertest": "^1.1.0"
       }
