@@ -91,19 +91,14 @@ module.exports = yeoman.generators.Base.extend({
         'bluebird': '^3.0.6',
         'co': '^4.6.0',
         'co-body': '^4.0.0',
-        'co-busboy': '^1.3.1',
         'co-foreach': '^1.1.1',
         'co-redis': '^2.0.0',
-        'co-request': '^1.0.0',
-        'co-views': '^0.2.0',
-        'cron': '^1.1.0',
-        'kcors': '^1.0.1',
         'koa': '^1.1.2',
+        "koa-cors": "0.0.16",
         'koa-bodyparser': '^2.0.1',
         'koa-compress': '^1.0.8',
         'koa-jwt': '^1.1.1',
         'koa-logger': '^1.3.0',
-        'koa-route': '^2.4.2',
         'koa-router': '^5.3.0',
         'koa-static': '^1.5.2',
         'lodash': '^3.10.1',
@@ -112,17 +107,10 @@ module.exports = yeoman.generators.Base.extend({
         'node-uuid': '^1.4.7',
         'nodemailer': '^1.10.0',
         'redis': '^2.4.2',
-        'sequelize': '^3.13.0',
-        'sequelize-cli': '^2.2.1',
+        'sequelize': '^3.21.0',
         'socket.io': '^1.3.7',
-        'swig': '^1.4.2',
         'thunkify-wrap': '^1.0.4',
-        'async': '^1.5.0',
-        'koa-body-parser': '^1.1.2',
-        'koa-generic-session': '^1.10.0',
-        'koa-redis': '^1.0.1',
-        'mysql': '^2.9.0',
-        'request': '^2.67.0'
+        'koa-generic-session': '^1.10.0'
       },
       devDependencies: {
         "chai": "^3.4.1",
@@ -173,9 +161,31 @@ module.exports = yeoman.generators.Base.extend({
       this.templatePath('index_tmpl.js'),
       'lib/index.js'
     );
+
+    //copy common middlewares from templates
     this.fs.copy(
       this.templatePath('request_id_tmpl.js'),
       'lib/middlewares/common/request_id.js'
+    );
+    this.fs.copy(
+      this.templatePath('koa-log4js_tmpl.js'),
+      'lib/middlewares/common/koa-log4js.js'
+    );
+    this.fs.copy(
+      this.templatePath('x-response-time_tmpl.js'),
+      'lib/middlewares/common/x-response-time.js'
+    );
+
+    //copy logger file
+    this.fs.copy(
+      this.templatePath('logger-index_tmpl.js'),
+      'lib/logger/index.js'
+    );
+
+    //copy routes file
+    this.fs.copy(
+      this.templatePath('routes-index_tmpl.js'),
+      'lib/routes/index.js'
     );
 
   },

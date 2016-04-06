@@ -67,6 +67,10 @@ Modify index.js for further mocha test(next version will add a sample).
 
 Remove the useless modules and add `co-mocha`, `co-supertest` to package.json
 
+### 1.1.0
+
+Simplify the node modules required and add logger, routes and some common middlewares.
+
 ## Getting To Know Sudiyi
 
 [Sudiyi](http://sposter.net/) is cool to help user to collect online shopping packages.

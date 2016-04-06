@@ -1,8 +1,6 @@
 /**
  * Created by solee on 12/4/15.
  */
-
-
 'use strict';
 
 var uuid = require('node-uuid').v4;

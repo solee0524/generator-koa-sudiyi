@@ -6,40 +6,36 @@
 
 var koa = require('koa');
 var app = koa();
-var http = require('http');
 var compress = require('koa-compress');
 var serve = require('koa-static');
 var bodyParser = require('koa-bodyparser');
 var jwt = require('koa-jwt');
-var router = require('koa-router')(app);
-var cors = require('kcors');
+var cors = require('koa-cors');
 var path = require('path');
 
-//middleware
+//middlewares
+var xResponseTime = require('./middlewares/x-response-time');
+var log4jsMiddleware = require('./middlewares/koa-log4js');
+var logger = require('./logger');
 var requestId = require('./middlewares/common/request_id.js');
 
-
+app.use(cors());
 // Serve static files
 app.use(serve(path.join(__dirname, '../public')));
 
-app.use(cors());
 app.use(requestId());
+app.use(xResponseTime);
+app.use(log4jsMiddleware);
 
 //Please handle error here
 //app.use(errorHandler());
 
 app.use(bodyParser());
-app.use(router.routes());
-app.use(router.allowedMethods());
 
-router.get('/hello',function *(next){
-  yield next;
-  this.body = 'Hello, this is Sudiyi generator';
-});
+require('./routes')(app);
 
 
 if (!module.parent) {
-  //http.createServer(app.callback()).listen(process.env.PORT || 3333);
   app.listen(process.env.PORT || 3333);
   logger.info('listening on port %s', process.env.PORT || 3333);
 }
