@@ -14,8 +14,8 @@ var cors = require('koa-cors');
 var path = require('path');
 
 //middlewares
-var xResponseTime = require('./middlewares/x-response-time');
-var log4jsMiddleware = require('./middlewares/koa-log4js');
+var xResponseTime = require('./middlewares/common/x-response-time');
+var log4jsMiddleware = require('./middlewares/common/koa-log4js');
 var logger = require('./logger');
 var requestId = require('./middlewares/common/request_id.js');
 
