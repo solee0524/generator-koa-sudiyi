@@ -7,7 +7,7 @@
 var router = require('koa-router')();
 
 module.exports = function (app){
-  router.get('/hello',function *(next){
+  router.get('/hello', function *(next){
     yield next;
     this.body = 'Hello, this is Sudiyi generator';
   });

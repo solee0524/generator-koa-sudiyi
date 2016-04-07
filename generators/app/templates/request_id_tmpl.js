@@ -12,5 +12,5 @@ module.exports = function () {
     this.requestStart = moment().format('x');
 
     yield next;
-  }
+  };
 };

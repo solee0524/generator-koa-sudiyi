@@ -6,10 +6,8 @@
 
 var koa = require('koa');
 var app = koa();
-var compress = require('koa-compress');
 var serve = require('koa-static');
 var bodyParser = require('koa-bodyparser');
-var jwt = require('koa-jwt');
 var cors = require('koa-cors');
 var path = require('path');
 

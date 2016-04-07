@@ -29,13 +29,13 @@
   },
   "devDependencies": {
     "yeoman-assert": "^2.0.0",
-    "gulp": "^3.6.0",
-    "gulp-eslint": "^1.0.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^2.0.0",
     "gulp-exclude-gitignore": "^1.0.0",
-    "gulp-istanbul": "^0.9.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-nsp": "^2.1.0"
+    "gulp-istanbul": "^0.10.4",
+    "gulp-mocha": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-nsp": "^2.4.0"
   },
   "repository": "solee0524/generator-koa-sudiyi",
   "scripts": {
