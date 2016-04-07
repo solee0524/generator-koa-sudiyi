@@ -5,6 +5,12 @@
     "mocha": true,
     "es6": true
   },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
     "array-bracket-spacing": [
       2,
