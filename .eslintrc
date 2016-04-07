@@ -11,6 +11,7 @@
       "jsx": true
     }
   },
+  "parser": "babel-eslint",
   "rules": {
     "array-bracket-spacing": [
       2,
