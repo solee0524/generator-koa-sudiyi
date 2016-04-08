@@ -22,7 +22,8 @@ module.exports = function *(next) {
     this.url,
     this.status,
     nodeReq.httpVersion,
-    this.length || null,
+    this.length || null,after_success:
+  - 'cat ./coverage/lcov.info | ./node_modules/.bin/coveralls'
     this.header['user-agent'],
     ms
   );
