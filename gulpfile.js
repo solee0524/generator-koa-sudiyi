@@ -13,7 +13,7 @@ gulp.task('static', function () {
     .pipe(excludeGitignore())
     .pipe(eslint())
     .pipe(eslint.format());
-    //.pipe(eslint.failAfterError());
+  //.pipe(eslint.failAfterError());
 });
 
 gulp.task('nsp', function (cb) {
@@ -28,7 +28,7 @@ gulp.task('pre-test', function () {
     .pipe(istanbul.hookRequire());
 });
 
-gulp.task('test', ['pre-test'], function (cb) {
+gulp.task('test', [], function (cb) {
   var mochaErr;
 
   gulp.src('test/**/*.js')
