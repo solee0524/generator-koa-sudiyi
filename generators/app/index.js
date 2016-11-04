@@ -7,7 +7,6 @@ var _ = require('lodash');
 var extend = require('deep-extend');
 var mkdirp = require('mkdirp');
 
-
 module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
@@ -60,7 +59,6 @@ module.exports = yeoman.generators.Base.extend({
       done();
     }.bind(this));
 
-
   },
 
   defaults: function () {
@@ -88,37 +86,39 @@ module.exports = yeoman.generators.Base.extend({
     var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'), {});
     extend(pkg, {
       dependencies: {
-        "aliyun-sdk": "^1.6.3",
-        "bluebird": "^3.0.6",
+        "circular-json": "^0.3.1",
         "co": "^4.6.0",
-        "co-body": "^4.0.0",
-        "co-foreach": "^1.1.1",
-        "co-redis": "^2.0.0",
-        "koa": "^1.1.2",
+        "co-busboy": "^1.3.1",
+        "co-fs": "^1.2.0",
+        "co-redis": "^2.1.1",
+        "json-key-converter": "^1.0.0",
+        "koa": "^1.2.4",
+        "koa-bodyparser": "^2.2.0",
         "koa-cors": "0.0.16",
-        "koa-bodyparser": "^2.0.1",
-        "koa-compress": "^1.0.8",
-        "koa-jwt": "^1.1.1",
-        "koa-logger": "^1.3.0",
-        "koa-router": "^5.3.0",
-        "koa-static": "^1.5.2",
-        "lodash": "^3.10.1",
-        "log4js": "^0.6.29",
+        "koa-jwt": "^1.2.0",
+        "koa-request": "^1.0.0",
+        "koa-router": "^5.4.0",
+        "koa-static-server": "^1.0.0",
+        "lodash": "^4.16.6",
+        "log4js": "^1.0.0",
+        "md5": "^2.2.1",
         "moment": "^2.10.6",
-        "node-uuid": "^1.4.7",
-        "nodemailer": "^1.10.0",
-        "redis": "^2.4.2",
-        "sequelize": "^3.21.0",
-        "socket.io": "^1.3.7",
-        "thunkify-wrap": "^1.0.4",
-        "koa-generic-session": "^1.10.0"
+        "mysql": "^2.9.0",
+        "password-generator": "^2.0.2",
+        "qiniu": "^6.1.11",
+        "redis": "^2.6.3",
+        "request": "^2.78.0",
+        "sequelize": "^3.24.7",
+        "tv4": "^1.2.7"
       },
       devDependencies: {
-        "chai": "^3.4.1",
+        "apidoc": "^0.16.1",
+        "chai": "^3.5.0",
+        "chai3-json-schema": "^1.2.1",
         "co-mocha": "^1.1.2",
         "co-supertest": "0.0.10",
-        "mocha": "^2.3.3",
-        "supertest": "^1.1.0"
+        "mocha": "^2.5.3",
+        "supertest": "^1.2.0"
       }
     });
     pkg.keywords = pkg.keywords || [];
@@ -132,7 +132,6 @@ module.exports = yeoman.generators.Base.extend({
 
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
 
-
     mkdirp('lib/controllers');
     mkdirp('lib/middlewares');
     mkdirp('lib/middlewares/common');
@@ -142,7 +141,6 @@ module.exports = yeoman.generators.Base.extend({
     mkdirp('lib/routes');
     mkdirp('lib/utils');
     mkdirp('public');
-
 
     this.fs.copy(
       this.templatePath('gitignore_tmpl'),
@@ -185,7 +183,6 @@ module.exports = yeoman.generators.Base.extend({
     this.fs.write(this.destinationPath('lib/logger/index.js'), loggerIndexTmpl({
       project_name: this.props.projectName
     }));
-
 
     //copy routes file
     this.fs.copy(
