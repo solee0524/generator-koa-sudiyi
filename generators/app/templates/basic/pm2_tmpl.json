@@ -1,0 +1,41 @@
+[
+  {
+    "name": "<%- project_name %>",
+    "script": "app.js",
+    "node_args": "--harmony",
+    "log_date_format": "YYYY-MM-DD HH:mm Z",
+    "watch": [
+      "app.js",
+      "routes",
+      "lib"
+    ],
+    "ignore_watch": [
+      ".git",
+      ".bowerrc",
+      ".gitignore",
+      ".bower.json",
+      "db.mwb",
+      "db.mwb.bak",
+      "package.json",
+      "pm2.json",
+      "README.md",
+      "start",
+      "node_modules",
+      "public",
+      "views"
+    ],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "max_memory_restart": "512M",
+    "env": {
+      "VERSION": "0.0.1",
+      "NODE_ENV": "development",
+      "MYSQL": "mysql://username:password@youripaddress:3306/database",
+      "REDIS_HOST": "127.0.0.1",
+      "REDIS_PORT": 6379,
+      "REDIS_PASS": "",
+      "PORT": 12345
+    }
+  }
+]

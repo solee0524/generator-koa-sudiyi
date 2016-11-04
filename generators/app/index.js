@@ -76,14 +76,14 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: function () {
 
-    var readmeTmpl = _.template(this.fs.read(this.templatePath('README.md')));
+    var readmeTmpl = _.template(this.fs.read(this.templatePath('./basic/README.md')));
     this.fs.write(this.destinationPath('README.md'), readmeTmpl({
       project_name: this.props.projectName,
       project_license: this.props.projectLicense,
       project_author: this.props.projectAuthor
     }));
 
-    var pkg = this.fs.readJSON(this.templatePath('package_tmpl.json'), {});
+    var pkg = this.fs.readJSON(this.templatePath('./basic/package_tmpl.json'), {});
     extend(pkg, {
       dependencies: {
         "circular-json": "^0.3.1",
@@ -132,62 +132,127 @@ module.exports = yeoman.generators.Base.extend({
 
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
 
+    mkdirp('lib/const');
     mkdirp('lib/controllers');
-    mkdirp('lib/middlewares');
-    mkdirp('lib/middlewares/common');
-    mkdirp('lib/models');
     mkdirp('lib/db');
     mkdirp('lib/logger');
+    mkdirp('lib/middlewares');
+    mkdirp('lib/models');
     mkdirp('lib/routes');
+    mkdirp('lib/schemas');
+    mkdirp('lib/services');
     mkdirp('lib/utils');
     mkdirp('public');
 
+    // copy setting files
     this.fs.copy(
-      this.templatePath('gitignore_tmpl'),
+      this.templatePath('./basic/gitignore_tmpl'),
       this.destinationPath('.gitignore')
     );
     this.fs.copy(
-      this.templatePath('jshintrc_tmpl'),
+      this.templatePath('./basic/jshintrc_tmpl'),
       this.destinationPath('.jshintrc')
     );
     this.fs.copy(
-      this.templatePath('app_tmpl.js'),
+      this.templatePath('./basic/app_tmpl.js'),
       this.destinationPath('app.js')
     );
+    var pm2JsonTmpl = _.template(this.fs.read(this.templatePath('./basic/pm2_tmpl.json')));
+    this.fs.write(this.destinationPath('pm2.json'), pm2JsonTmpl({
+      project_name: this.props.projectName
+    }));
 
     this.fs.copy(
-      this.templatePath('index_tmpl.js'),
+      this.templatePath('index.js'),
       'lib/index.js'
     );
 
-    //copy common middlewares from templates
+    // copy constant index file
     this.fs.copy(
-      this.templatePath('request_id_tmpl.js'),
-      'lib/middlewares/common/request_id.js'
+      this.templatePath('./const/index.js'),
+      'lib/const/index.js'
+    );
+
+    // copy controllers index file
+    this.fs.copy(
+      this.templatePath('./controllers/index.js'),
+      'lib/controllers/index.js'
+    );
+
+    // copy db files
+    this.fs.copy(
+      this.templatePath('./db/mysql.js'),
+      'lib/db/mysql.js'
     );
     this.fs.copy(
-      this.templatePath('koa-log4js_tmpl.js'),
-      'lib/middlewares/common/koa-log4js.js'
+      this.templatePath('./db/mysql-redis-cache.js'),
+      'lib/db/mysql-redis-cache.js'
     );
     this.fs.copy(
-      this.templatePath('x-response-time_tmpl.js'),
-      'lib/middlewares/common/x-response-time.js'
+      this.templatePath('./db/redis.js'),
+      'lib/db/redis.js'
     );
 
     //copy logger file
-    //this.fs.copy(
-    //  this.templatePath('logger-index_tmpl.js'),
-    //  'lib/logger/index.js'
-    //);
-    var loggerIndexTmpl = _.template(this.fs.read(this.templatePath('logger-index_tmpl.js')));
+    var loggerIndexTmpl = _.template(this.fs.read(this.templatePath('./logger/index.js')));
     this.fs.write(this.destinationPath('lib/logger/index.js'), loggerIndexTmpl({
       project_name: this.props.projectName
     }));
 
+    //copy middlewares from templates
+    this.fs.copy(
+      this.templatePath('./middlewares/request-id.js'),
+      'lib/middlewares/request-id.js'
+    );
+    this.fs.copy(
+      this.templatePath('./middlewares/koa-log4js.js'),
+      'lib/middlewares/koa-log4js.js'
+    );
+    this.fs.copy(
+      this.templatePath('./middlewares/x-response-time.js'),
+      'lib/middlewares/x-response-time.js'
+    );
+    this.fs.copy(
+      this.templatePath('./middlewares/filter.js'),
+      'lib/middlewares/filter.js'
+    );
+
+    // copy models index file
+    this.fs.copy(
+      this.templatePath('./models/index.js'),
+      'lib/models/index.js'
+    );
+
     //copy routes file
     this.fs.copy(
-      this.templatePath('routes-index_tmpl.js'),
+      this.templatePath('./routes/index.js'),
       'lib/routes/index.js'
+    );
+
+    // copy schemas index file
+    this.fs.copy(
+      this.templatePath('./schemas/index.js'),
+      'lib/schemas/index.js'
+    );
+
+    // copy services index file
+    this.fs.copy(
+      this.templatePath('./services/index.js'),
+      'lib/services/index.js'
+    );
+
+    //copy util files
+    this.fs.copy(
+      this.templatePath('./utils/helper.js'),
+      'lib/utils/helper.js'
+    );
+    this.fs.copy(
+      this.templatePath('./utils/qiniu.js'),
+      'lib/utils/qiniu.js'
+    );
+    this.fs.copy(
+      this.templatePath('./utils/resp-code-handler.js'),
+      'lib/utils/resp-code-handler.js'
     );
 
   },
