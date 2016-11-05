@@ -224,10 +224,10 @@ module.exports = yeoman.generators.Base.extend({
     );
 
     //copy routes file
-    this.fs.copy(
-      this.templatePath('./routes/index.js'),
-      'lib/routes/index.js'
-    );
+    var routesIndexTmpl = _.template(this.fs.read(this.templatePath('./routes/index.js')));
+    this.fs.write(this.destinationPath('lib/routes/index.js'), routesIndexTmpl({
+      project_name: this.props.projectName
+    }));
 
     // copy schemas index file
     this.fs.copy(

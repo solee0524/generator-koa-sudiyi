@@ -53,24 +53,42 @@ Scaffolds out a complete generator directory structure for you:
 
 ```
 .
-├──lib/
-│   ├── controllers/
-│   ├── middlewares/
-│   │   └── common/
-│   │       └── request_id.js
-│   ├── models/
-│   ├── db/
-│   ├── logger/
-│   ├── routes/
-│   ├── utils/
-│   └── index.js
-│
-├── public/
-├── app.js
 ├── .gitignore
 ├── .jshintrc
+├── README.md
+├── app.js
+├── lib
+│   ├── const
+│   │   └── index.js
+│   ├── controllers
+│   │   └── index.js
+│   ├── db
+│   │   ├── mysql-redis-cache.js
+│   │   ├── mysql.js
+│   │   └── redis.js
+│   ├── index.js
+│   ├── logger
+│   │   └── index.js
+│   ├── middlewares
+│   │   ├── filter.js
+│   │   ├── koa-log4js.js
+│   │   ├── request-id.js
+│   │   └── x-response-time.js
+│   ├── models
+│   │   └── index.js
+│   ├── routes
+│   │   └── index.js
+│   ├── schemas
+│   │   └── index.js
+│   ├── services
+│   │   └── index.js
+│   └── utils
+│       ├── helper.js
+│       ├── qiniu.js
+│       └── resp-code-handler.js
 ├── package.json
-└── README.md
+├── pm2.json
+└── public
 ```
 
 ## Run the demo
@@ -102,6 +120,10 @@ Remove the useless modules and add `co-mocha`, `co-supertest` to package.json
 ### 1.1.0
 
 Simplify the node modules required and add logger, routes and some common middlewares.
+
+### 2.0.0
+
+Change project structure to make it more reasonable. Update dependencies packages and their version.
 
 ## Getting To Know Sudiyi
 

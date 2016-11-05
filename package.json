@@ -1,6 +1,6 @@
 {
   "name": "generator-koa-sudiyi",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "A yo generator with koa.js from sudiyi.",
   "homepage": "https://github.com/solee0524/generator-koa-sudiyi#readme",
   "author": {
