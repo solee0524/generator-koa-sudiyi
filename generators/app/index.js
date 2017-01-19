@@ -53,7 +53,7 @@ module.exports = yeoman.generators.Base.extend({
       }
     ];
 
-    this.prompt(prompts, function (props) {
+    this.prompt(prompts).then(function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
       done();
@@ -61,7 +61,7 @@ module.exports = yeoman.generators.Base.extend({
 
   },
 
-  defaults: function () {
+  default: function () {
 
     if (path.basename(this.destinationPath()) !== this.props.projectName) {
       this.log(
